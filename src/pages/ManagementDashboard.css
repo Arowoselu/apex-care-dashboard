@@ -1,0 +1,206 @@
+/* =============================================================================
+   ManagementDashboard.css
+   Layout for the Management Intelligence Dashboard.
+============================================================================= */
+
+/* ── Page wrapper ────────────────────────────────────────────────────────── */
+.mgmt-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navigation bar ──────────────────────────────────────────────────────── */
+.mgmt-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.mgmt-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mgmt-nav-icon { font-size: 1.25rem; }
+
+.mgmt-nav-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.mgmt-nav-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--accent-purple);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.625rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: var(--accent-glow);
+}
+
+.mgmt-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mgmt-nav-email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.mgmt-nav-signout {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mgmt-nav-signout:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+.mgmt-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  gap: 1.5rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── §8.1 Location Filter Bar ────────────────────────────────────────────── */
+.mgmt-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+}
+
+.mgmt-filter-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.mgmt-filter-select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  padding: 0.4rem 2.5rem 0.4rem 1rem;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.mgmt-filter-select:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.mgmt-filter-select option {
+  background: var(--bg-surface);
+}
+
+/* ── Tab Navigation ──────────────────────────────────────────────────────── */
+.mgmt-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 0.35rem;
+}
+
+.mgmt-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mgmt-tab:hover:not(.mgmt-tab--active) {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+}
+
+.mgmt-tab--active {
+  background: var(--accent-purple);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: var(--accent-glow);
+}
+
+/* Alert count badge inside tab button */
+.mgmt-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-danger);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  line-height: 1;
+}
+
+/* ── Queue panel ─────────────────────────────────────────────────────────── */
+.mgmt-panel {
+  flex: 1;
+}

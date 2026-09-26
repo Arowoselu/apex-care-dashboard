@@ -1,0 +1,155 @@
+/* =============================================================================
+   StaffPortal.css
+============================================================================= */
+
+/* ── Page wrapper ────────────────────────────────────────────────────────── */
+.staff-portal {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navigation bar ──────────────────────────────────────────────────────── */
+.staff-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.staff-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.staff-nav-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.staff-nav-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--accent-purple);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.625rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: var(--accent-glow);
+}
+
+.staff-nav-user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.staff-nav-email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.staff-nav-signout {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.staff-nav-signout:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+/* ── Tab Navigation ──────────────────────────────────────────────────────── */
+.staff-tabs-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 2rem 0;
+}
+
+.staff-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 0.35rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.staff-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.staff-tab:hover:not(.staff-tab--active) {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+}
+
+.staff-tab--active {
+  background: var(--accent-purple);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: var(--accent-glow);
+}
+
+/* ── Main content area ───────────────────────────────────────────────────── */
+.staff-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ── Each content section ────────────────────────────────────────────────── */
+.staff-section {
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.staff-section--wide {
+  max-width: 1200px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

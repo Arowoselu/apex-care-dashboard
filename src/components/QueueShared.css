@@ -1,0 +1,288 @@
+/* =============================================================================
+   QueueShared.css
+   Shared styles used by all queue components:
+   MasterOverviewGrid, AlertsQueue, PrivateQueue, ReadyToPostQueue, HumanReviewQueue.
+============================================================================= */
+
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
+.q-wrapper {
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.q-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.q-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.q-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Count badges in title */
+.q-count-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.625rem;
+}
+
+.q-count-badge--alert   { background: var(--color-danger-bg);   color: var(--color-danger); border: 1px solid rgba(239,68,68,0.2); }
+.q-count-badge--private { background: var(--color-warning-bg);  color: var(--color-warning); border: 1px solid rgba(245,158,11,0.2); }
+.q-count-badge--ready   { background: var(--color-success-bg);   color: var(--color-success); border: 1px solid rgba(16,185,129,0.2); }
+
+/* Refresh button */
+.q-refresh {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.q-refresh:hover { 
+  background: var(--bg-surface-hover);
+  border-color: var(--accent-purple); 
+  color: var(--text-main); 
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+/* ── States ──────────────────────────────────────────────────────────────── */
+.q-loading {
+  padding: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.q-error {
+  padding: 1.25rem 2rem;
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.q-error button {
+  background: transparent;
+  border: 1px solid rgba(239,68,68,0.4);
+  border-radius: var(--radius-sm);
+  color: var(--color-danger);
+  padding: 0.35rem 0.75rem;
+}
+
+.q-empty {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.q-empty p { margin: 0 0 0.25rem; font-size: 0.95rem; }
+.q-empty-note { font-size: 0.85rem !important; opacity: 0.7; }
+
+/* ── Section headers (Alerts open/acted) ─────────────────────────────────── */
+.q-section { padding: 0 2rem 1.5rem; }
+
+.q-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text-main);
+}
+
+.q-section-title--open { color: var(--color-danger); }
+
+.q-section-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin: 0.75rem 0 0;
+}
+
+.q-section-toggle:hover { color: var(--text-main); }
+
+/* ── Table scroll container ──────────────────────────────────────────────── */
+.q-scroll { overflow-x: auto; }
+
+/* ── Table ───────────────────────────────────────────────────────────────── */
+.q-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.q-th {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.q-th--sortable { cursor: pointer; transition: color 0.2s; }
+.q-th--sortable:hover { color: var(--text-main); }
+.q-th--center { text-align: center; }
+
+.sort-icon { color: var(--text-muted); font-size: 0.7rem; margin-left: 0.25rem; }
+
+.q-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.15s ease;
+}
+
+.q-row:last-child { border-bottom: none; }
+.q-row:hover { background: rgba(255, 255, 255, 0.03); }
+.q-row--clickable { cursor: pointer; }
+.q-row--clickable:hover { background: rgba(139, 92, 246, 0.08); }
+.q-row--acted { opacity: 0.4; }
+
+.q-td {
+  padding: 1rem 1.5rem;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.q-td--center { text-align: center; }
+.q-td--date   { white-space: nowrap; color: var(--text-muted); font-size: 0.85rem; }
+.q-td--preview { max-width: 280px; }
+
+/* ── Shared cell components ──────────────────────────────────────────────── */
+.id-badge {
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.location-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.empty-cell { color: rgba(255, 255, 255, 0.2); }
+
+/* ── Badges ─────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.badge--positive { background: var(--color-success-bg); color: var(--color-success); border-color: rgba(16,185,129,0.2); }
+.badge--neutral  { background: rgba(255,255,255,0.05);  color: var(--text-muted); border-color: var(--border-subtle); }
+.badge--negative { background: var(--color-danger-bg);  color: var(--color-danger); border-color: rgba(239,68,68,0.2); }
+.badge--high     { background: var(--color-danger-bg);  color: var(--color-danger); border-color: rgba(239,68,68,0.3); font-weight: 600; }
+.badge--low      { background: rgba(255,255,255,0.05); color: var(--text-muted); border-color: var(--border-subtle); }
+
+/* ── Routing status chip ─────────────────────────────────────────────────── */
+.routing-chip {
+  display: inline-block;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--accent-purple);
+  border-radius: var(--radius-md);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ── Flag chips (Alerts) ─────────────────────────────────────────────────── */
+.flag-chip {
+  display: inline-block;
+  border-radius: var(--radius-md);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-right: 0.4rem;
+}
+
+.flag--escalated { background: var(--color-danger-bg); color: var(--color-danger); border: 1px solid rgba(239,68,68,0.2); }
+.flag--repeat    { background: var(--color-warning-bg); color: var(--color-warning); border: 1px solid rgba(245,158,11,0.2); }
+
+.repeat-flag { font-size: 1.1rem; }
+
+/* ── Action hint ─────────────────────────────────────────────────────────── */
+.action-hint {
+  color: var(--accent-purple);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.q-row--clickable:hover .action-hint {
+  color: var(--accent-purple-hover);
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+/* ── Feedback preview ───────────────────────────────────────────────────── */
+.feedback-preview {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 280px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Copy button ─────────────────────────────────────────────────────────── */
+.copy-btn {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.copy-btn:hover:not(:disabled) { 
+  border-color: var(--accent-purple); 
+  color: var(--text-main); 
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}
+.copy-btn:disabled { cursor: default; }
+.copy-btn--copied  { border-color: var(--color-success); color: var(--color-success); background: var(--color-success-bg); }
+.copy-btn--error   { border-color: var(--color-danger); color: var(--color-danger); }

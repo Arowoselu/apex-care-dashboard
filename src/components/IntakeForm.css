@@ -1,0 +1,179 @@
+/* =============================================================================
+   IntakeForm.css
+============================================================================= */
+
+.intake-form-wrapper {
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.intake-form-header {
+  margin-bottom: 2.5rem;
+}
+
+.intake-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.intake-form-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.intake-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intake-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.intake-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.intake-required {
+  color: var(--color-danger);
+}
+
+.intake-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.intake-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.intake-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.intake-input--error {
+  border-color: rgba(239, 68, 68, 0.6);
+}
+.intake-input--error:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.intake-field-error {
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.intake-submit-btn {
+  background: var(--accent-purple);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  align-self: flex-start;
+  min-width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.intake-submit-btn:hover:not(:disabled) {
+  background: var(--accent-purple-hover);
+  box-shadow: var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.intake-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.intake-btn-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.intake-banner {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.intake-banner--success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.intake-banner--error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.intake-banner-icon {
+  font-size: 1.25rem;
+}
+
+.intake-banner div p {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.intake-retry-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
