@@ -12,7 +12,7 @@ const FIELDS = [
   "Job ID", "Customer Name", "Location", "Sentiment",
   "Severity", "Routing Status", "Repeat Offender",
   "Response Sent", "Status Last Modified", "Raw Feedback", "AI Draft Response",
-  "Customer Email",
+  "Customer Email", "Repair Issue"
 ];
 
 const SentimentBadge = ({ value }) => {

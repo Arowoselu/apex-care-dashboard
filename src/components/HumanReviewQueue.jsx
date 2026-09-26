@@ -11,7 +11,7 @@ const TABLE_NAME = import.meta.env.VITE_AIRTABLE_TABLE_NAME;
 const FIELDS = [
   "Job ID", "Customer Name", "Location", "Sentiment", "Severity",
   "Status Last Modified", "Raw Feedback", "AI Draft Response", "Customer Email",
-  "Routing Status", "Response Sent",
+  "Routing Status", "Response Sent", "Repair Issue", "Repeat Offender"
 ];
 
 const formatDate = (iso) => {
